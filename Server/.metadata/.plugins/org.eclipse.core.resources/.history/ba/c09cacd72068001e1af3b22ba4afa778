@@ -1,0 +1,17 @@
+package com.anuj.blogapp.services;
+
+import com.anuj.blogapp.entity.Post;
+import com.anuj.blogapp.payloads.PostDTO;
+
+public interface PostService {
+	
+	//create post
+	Post createPost(PostDTO postdto);
+	
+	//update post
+	Post updatePost(PostDTO postDto);
+	
+	//delete Post
+	void deletePost(Integer postId)
+	
+}

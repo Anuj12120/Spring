@@ -1,0 +1,5 @@
+package com.anuj.blogapp.payloads;
+
+public class CategoryDTO {
+
+}

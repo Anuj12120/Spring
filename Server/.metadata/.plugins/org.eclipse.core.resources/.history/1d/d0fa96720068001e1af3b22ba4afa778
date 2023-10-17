@@ -1,0 +1,56 @@
+package com.anuj.blogapp.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.anuj.blogapp.payloads.CategoryDTO;
+import com.anuj.blogapp.services.CategoryService;
+
+@RestController
+@RequestMapping("/appi/category")
+public class CategoryController {
+	
+	@Autowired
+	private CategoryService categoryService;
+	
+	//Create Request for create category
+	@PostMapping("/")
+	public ResponseEntity<CategoryDTO> createCategory(@RequestBody CategoryDTO categoryDTO){
+		
+		CategoryDTO categoryDTO2 = this.categoryService.createCategory(categoryDTO);
+		return new ResponseEntity<CategoryDTO>(categoryDTO2, HttpStatus.CREATED);
+		
+	}
+	
+	
+	//Update Request for update category
+	@PutMapping("/{categoryId}")
+	public ResponseEntity<CategoryDTO> updateCategory(@RequestBody CategoryDTO categoryDTO, @PathVariable Integer categoryId){
+		
+		CategoryDTO categoryDTO2 = this.categoryService.updateCategory(categoryDTO, categoryId);
+		return new ResponseEntity<CategoryDTO>(categoryDTO2, HttpStatus.OK);
+		
+	}
+	
+	//Delete request for delete the specific category
+	@DeleteMapping("/{categoryId}")
+	public ResponseEntity<CategoryDTO> createCategory(@PathVariable Integer categoryId){
+		
+		this.categoryService.deleteCategory(categoryId);
+		return new ResponseEntity<CategoryDTO>(HttpStatus.OK);
+		
+	}
+	
+	
+	
+	//Get Request for Get Specific User details
+	//Get Request for Get all the User from the database
+}

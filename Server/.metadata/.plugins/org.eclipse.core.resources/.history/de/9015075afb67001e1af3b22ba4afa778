@@ -1,0 +1,5 @@
+package com.anuj.blogapp.services;
+
+public interface CategoryService {
+
+}

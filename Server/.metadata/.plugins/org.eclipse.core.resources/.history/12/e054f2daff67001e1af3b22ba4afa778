@@ -1,0 +1,39 @@
+package com.anuj.blogapp.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.anuj.blogapp.payloads.CategoryDTO;
+import com.anuj.blogapp.services.CategoryService;
+
+@RestController
+@RequestMapping("/appi/category")
+public class CategoryController {
+	
+	@Autowired
+	private CategoryService categoryService;
+	
+	//Create Request for create category
+	@PostMapping("/")
+	public ResponseEntity<CategoryDTO> createCategory(@RequestBody CategoryDTO categoryDTO){
+		
+		CategoryDTO categoryDTO2 = this.categoryService.createCategory(categoryDTO);
+		return new ResponseEntity<CategoryDTO>(categoryDTO2, HttpStatus.CREATED);
+		
+	}
+	
+	
+	
+	
+	
+	
+	//Update Request for update category
+	//Delete request for delete the specific category
+	//Get Request for Get Specific User details
+	//Get Request for Get all the User from the database
+}

@@ -1,0 +1,5 @@
+package com.anuj.blogapp.exceptions;
+
+public class MethodArgumentNotValidException {
+
+}

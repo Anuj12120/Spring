@@ -1,0 +1,13 @@
+package com.anuj.blogapp.exceptions;
+
+public class MethodArgumentNotValidException extends RuntimeException {
+	
+		
+	
+	public MethodArgumentNotValidException() {
+		super(String.format("Type mismatch"));
+		
+	}
+
+	
+}

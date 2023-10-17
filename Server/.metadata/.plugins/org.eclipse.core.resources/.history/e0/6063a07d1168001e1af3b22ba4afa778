@@ -1,0 +1,5 @@
+package com.anuj.blogapp.repository;
+
+public interface PostRepo {
+
+}

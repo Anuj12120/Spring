@@ -1,0 +1,21 @@
+package com.anuj.blogapp.exceptions;
+
+public class MethodArgumentNotValidException extends RuntimeException {
+	
+	private String resourceName;
+	private String filedName;
+	private long filedValue;
+	
+	
+	
+	public MethodArgumentNotValidException() {
+		
+	}
+	
+	public MethodArgumentNotValidException(String resourceName, String filedName, long filedValue) {
+		super(String.format("%s not found with %s : %s", resourceName, filedName, filedValue));
+		this.resourceName = resourceName;
+		this.filedName = filedName;
+		this.filedValue = filedValue;
+	}
+}

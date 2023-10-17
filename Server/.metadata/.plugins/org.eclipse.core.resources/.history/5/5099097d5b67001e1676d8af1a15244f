@@ -1,0 +1,8 @@
+package com.anuj.blogapp.exceptions;
+
+public class MethodArgumentNotValidException extends RuntimeException {
+	
+	private String resourceName;
+	private String filedName;
+	private long filedValue;
+}
